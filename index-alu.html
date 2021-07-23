@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assests/css/test_v3.css">
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>  
+    <script type="text/javascript" src="assests/js/sha256.js"></script>   
+    <script type="text/javascript" src="assests/js/test_v3.js" defer></script>
+
+</head>
+<body>
+    <div id="wrapper" class="wrapper">
+        <div id="header">
+            <div id="top_header">
+
+                <img src="assests/data/logo2.png" alt="logo" width="200px" style="margin-bottom: 20px;">
+                <p>HỆ THỐNG THI TRẮC NGHIỆM</p>
+            </div>            
+
+            <div id='bottom_header'>
+                <button id="btn_showconfig"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg></button>
+                <p id='session_id'></p>
+                <div id="right_bottom_header">                
+                    <span id="timer"></span> <!--hiện thị thời gian còn lại-->
+                    <button id="btn_control">BẮT ĐẦU</button>
+                </div>
+            </div>
+
+        </div>
+        <div id="main">
+            <!-- config page -->
+            <div id="config_page">
+                <div id='div_config'>
+                    <p>THIẾT LẬP BÀI THI:</p>
+                    <p><span>Thời gian thi:</span><input id='in_interval' value='60'>phút</p>
+                    <p><span>Số lượng câu hỏi</span><input id='in_no_q' value='60'></p>
+                    <p><button id='btn_config'>OK</button></p>
+                </div>
+                
+                <div id='reset'><p>RESET ĐỀ THI</p></div>
+                
+                <div id='div_admin'>
+                    <p>QUẢN LÝ NGÂN HÀNG CÂU HỎI</p>
+                    <div class='admin__content'>
+                        <p>
+                            <span>Mật khẩu</span>
+                            <input id='txt_password' type="password">
+                        </p>                        
+                        <button id='admin'>ĐĂNG NHẬP</button>
+                    </div>
+
+                </div>
+                <div id='div_other'>
+                    <p>Đang phát triển</p>
+                    <button id='btn_test'>TEST</button>
+                </div>
+            </div>
+            <!-- end of configpage -->
+            <!-- main page -->
+            <div id="main_page">
+                <div id="info_page">
+                    <label id='lbl_exam'>KỲ THI</label>   
+                    <div>
+                        <span>Kỳ thi:</span>
+                        <select id="exam">                       
+                            <option value="DD">Nâng bậc Điều độ viên miền</option>
+                            <option value="PT">Nâng bậc Kỹ sư Phương thức HTĐ miền</option>
+                            <option value="CN">Nâng bậc Kỹ sư SCADA/EMS</option>
+                        </select> 
+                        <select id="grade">                       
+                            <option value="Bậc 1">Bậc 1</option>
+                            <option value="Bậc 2">Bậc 2</option>
+                            <option value="Bậc 3">Bậc 3</option>
+                            <option value="Bậc 4">Bậc 4</option>
+                            <option value="Bậc 5">Bậc 5</option>
+                        </select> 
+                    </div>
+                    <label id='lbl_info'>THÔNG TIN CÁ NHÂN THÍ SINH</label>
+                    <div>
+                        <span>Họ tên:</span>
+                        <input id="fullname" type="text">
+                        <span>Ngày sinh:</span>
+                        <input id="dob" type="date">
+                        <span>Giới tính:</span>
+                        <select id="gender">
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                            <option value="Khác">Khác</option>
+                        </select>
+                    </div>
+                    <div id='p_id'> 
+                        <span>Số CMND/CCCD:</span>
+                        <input id="id" type="number">
+                    </div>              
+                    <div>
+                        <span>Đơn vị:</span>
+                        <input id="org" type="text">
+                    </div>
+    
+                </div>
+
+                <div id="exam_page" style="display: none;">
+                    <div  id="top_exam_page" style="display:none;" class="top__main"> <!--mới thêm-->
+                        <p>Bạn <span id='top_exam_fullname'></span> đã hoàn thành xong phần thi!</p>
+                        <p>---</p>
+                        <div>
+                            <button type='submit' id='btn_print_res'>KẾT QUẢ</button>
+                            <button type='submit' id='btn_print_exam'>BÀI THI</button>
+                        </div>                    
+    
+                    </div>
+                    <div id="main_exam_page">
+                        <div id="left_main" class="left__main">        
+                            <div id="left_main_top" class="left__main__top">
+                                <span>Câu hỏi</span><span id='activequest'></span>
+                                
+                            </div>
+                            <div id="left_main_body" class="left__main__body">
+                            </div>
+                        </div>
+                        <div id="right_main" class="right__main">
+                            <div id="right_main_top" class="right__main__top">
+                                <div>Nội dung</div>
+                                <div id="navigate">
+                                    <button id="btn_back" tabindex="1">
+                                        <svg viewBox="0 0 96 96"><title/><path d="M39.3756,48.0022l30.47-25.39a6.0035,6.0035,0,0,0-7.6878-9.223L26.1563,43.3906a6.0092,6.0092,0,0,0,0,9.2231L62.1578,82.615a6.0035,6.0035,0,0,0,7.6878-9.2231Z"/></svg>
+                                    </button>
+                                    <button id="btn_next" tabindex="2">
+                                        <svg viewBox="0 0 96 96"><title/><path d="M69.8437,43.3876,33.8422,13.3863a6.0035,6.0035,0,0,0-7.6878,9.223l30.47,25.39-30.47,25.39a6.0035,6.0035,0,0,0,7.6878,9.2231L69.8437,52.6106a6.0091,6.0091,0,0,0,0-9.223Z"/></svg>
+                                    </button>
+                                </div>
+                       
+                            </div>
+                            <div id="right_main_body" class="right__main__body">
+                                <!-- Code được chèn ở đây -->
+                            </div>
+            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- end of mainpage -->
+            
+            
+        </div>
+        <div id="footer" class="wrapper__footer">
+            &nbsp;
+        </div>
+    </div>
+</body>
+</html>

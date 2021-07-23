@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài thi trắc nghiệm</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+            
+        }
+
+        html{
+            font-size: 60%;
+        }
+
+        #header p{
+            font-size:12px;
+        }
+
+        #head{
+            margin-bottom: 30px;
+        }
+
+        #head>p{
+            font-size: 3rem;
+        }  
+        
+        #head p:first-child{
+            margin-top: 30px;
+            font-weight: bold;
+        }
+
+        #main_info, #main_outcome{
+            margin-left: 20px;
+        }
+
+
+        label{
+            display: block;
+            margin: 30px 10px 20px 10px ;
+            font-weight: bold;
+            font-size: 2.5rem;
+        }
+
+        #main_signature{
+            display: flex;
+            justify-content: space-around;
+        }
+        #main_signature div:nth-child(2){
+            text-align: center;
+            font-weight: bold;
+        }
+        #main_signature div:nth-child(2) p:first-child{
+            margin-top: 20px;
+            font-weight:normal
+        }
+
+        #general_info{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+
+
+       #invigilator{
+            flex-basis: 30%;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+        }
+    
+        #invigilator div{
+            flex-basis: 50%;
+            border:1px solid green;
+            
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        #invigilator div p{
+            border:2px solid red;
+        }
+
+        #candidate{
+            border:1px solid green;
+            flex-basis:58%;
+            min-width: 500px;
+            display: flex;
+            font-size: 1.5rem;
+            
+        }
+        
+     
+        #result{
+            flex-basis: 12%;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+        }
+    
+        #result div{
+            flex-basis: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            border:1px solid green;
+        }
+
+        .infoclass{
+            
+        }
+
+        .qclass{
+
+            border:1px solid green;
+        }
+ 
+        .qclass table{
+            width: 100%"
+        }
+
+        .qclass table, th, td {
+            /* border: 1px solid black; */
+        }
+
+        .qclass__question{
+
+            border:1px solid blue;
+        }
+      
+        .qclass__options .options{
+            display: flex;            
+            justify-content: space-around;    
+            flex-wrap: true;     
+        }
+        /* Định dạng cho trang bài thi */
+        span, p, th, td {           
+            font-size: 2.5rem;
+        }
+
+        thead{
+            display: "table-header-group"
+        }
+
+        td {
+            padding: 5px 5px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="header" class="logo" style="display:flex; align-items: center; border-bottom: 2px solid black;" >
+        <img style="height: 60px;" src="assests/data/logo.png" alt="logoevn">
+        <div class="info">
+            <p>TRUNG TÂM ĐIỀU ĐỘ HỆ THỐNG ĐIỆN QUỐC GIA</p>
+            <p><strong>TRUNG TÂM ĐIỀU ĐỘ HỆ THỐNG ĐIỆN MIỀN NAM</strong></p>
+        </div>
+    </div>
+    <div id="wrapper" class="wrapper">
+        <div id="head" class="head" style="text-align: center;" >
+            <p>BÀI THI TRẮC NGHIỆM</p>
+            <p><span>Kỳ thi: </span><span id="exam"></span></p>
+            <p><span id="grade"></span></p>
+            <p>---</p>
+        </div>
+        <div id="main_info" class="main" >
+            <label>THÔNG TIN CHUNG</label>
+            <div id="general_info" class="infoclass">
+                <div id="invigilator" >
+                    <div>
+                        <span>Cán bộ coi thi 1</span>
+                    </div>
+                    <div>
+                        <span>Cán bộ coi thi 2</span>
+                    </div>
+                </div>
+                <div id="candidate" >
+                    <table>
+                        <tr>
+                            <td>Ngày thi: </td>
+                            <td><span id="examdate"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Phòng thi: </td>
+                            <td><span id="location">________</span></td>
+                        </tr>
+                        <tr>
+                            <td>Họ tên thí sinh: </td>
+                            <td><span id="fullname"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Ngày sinh: </td>
+                            <td><span id="dob"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Giới tính: </td>
+                            <td><span id="gender"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Số CMND/CCCD: </td>
+                            <td><span id="id"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Phòng ban/Đơn vị: </td>
+                            <td><span id="org"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Chữ ký thí sinh: </td>
+                            <td><span id="candi_signature">________________________</span></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="result" >
+                    <div>
+                        <span>Điểm thi</span>
+                        <span id='test_score'></span>
+                    </div>
+                    <div>
+                        <span>Đánh giá</span>
+                        <span id='exam_grade'></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="main_outcome" class="main">
+            <label>BÀI LÀM</label>
+            <table id="tbl_outcome" class="qclass">
+                <colgroup>
+                    <col  style="width: 82%;">
+                    <col  style="width: 8%;">
+                    <col style="width: 8%;">
+                 </colgroup>                 
+                <thead>
+                    <tr>
+                        <th>Câu hỏi</th>
+                        <th>Trả lời</th>
+                        <th>Kết quả</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+        </div>
+        <div style="font-size:2rem; text-align: center; margin-top: 20px;">
+            --HẾT--
+        </div>
+    </div>
+</body>
+</html>

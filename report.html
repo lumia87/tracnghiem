@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phiếu kết quả</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-family:  Helvetica, sans-serif;
+        }
+
+        #header p{
+            font-size:12px;
+        }
+
+        #head{
+            margin-bottom: 30px;
+        }
+
+        #head p{
+            font-size: 20px;
+        }  
+        #head p:first-child{
+            margin-top: 30px;
+            font-weight: bold;
+        }
+
+        #main_info, #main_outcome{
+            margin-left: 20px;
+        }
+
+        td {
+            padding: 5px 5px;
+        }
+
+        tr>td:first-child{
+            width: 200px;
+        }
+
+        #main_info p{
+            margin: 30px 10px 10px 10px ;
+            font-weight: bold;
+            font-size: 16px;
+
+        }
+        #main_outcome p{
+            margin: 30px 10px 10px 10px ;
+            font-weight: bold;
+            font-size: 16px;
+
+        }
+        #main_signature{
+            display: flex;
+            justify-content: space-around;
+        }
+        #main_signature div:nth-child(2){
+            text-align: center;
+            font-weight: bold;
+        }
+        #main_signature div:nth-child(2) p:first-child{
+            margin-top: 20px;
+            font-weight:normal
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="header" class="logo" style="display:flex; align-items: center; border-bottom: 2px solid black;" >
+        <img style="height: 60px;" src="assests/data/logo.png" alt="logoevn">
+        <div class="info">
+            <p>TRUNG TÂM ĐIỀU ĐỘ HỆ THỐNG ĐIỆN QUỐC GIA</p>
+            <p><strong>TRUNG TÂM ĐIỀU ĐỘ HỆ THỐNG ĐIỆN MIỀN NAM</strong></p>
+        </div>
+    </div>
+    <div id="wrapper" class="wrapper">
+        <div id="head" class="head" style="text-align: center;" >
+            <p>PHIẾU KẾT QUẢ TRẮC NGHIỆM</p>
+            <p>Kỳ thi:<span id="exam"></span></p>
+            <p><span id="grade"></span></p>
+            <p>---</p>
+        </div>
+        <div id="main_info" class="main" >
+            <p>THÔNG TIN THÍ SINH</p>
+            <table>
+                <tr>
+                    <td>Họ tên thí sinh: </td>
+                    <td><span id="fullname"></span></td>
+                </tr>
+                <tr>
+                    <td>Ngày sinh: </td>
+                    <td><span id="dob"></span></td>
+                </tr>
+                <tr>
+                    <td>Giới tính: </td>
+                    <td><span id="gender"></span></td>
+                </tr>
+                <tr>
+                    <td>Số CMND/CCCD: </td>
+                    <td><span id="id"></span></td>
+                </tr>
+                <tr>
+                    <td>Đơn vị: </td>
+                    <td><span id="org"></span></td>
+                </tr>
+                <tr>
+                    <td>Ngày thi: </td>
+                    <td><span id="examdate"></span></td>
+                </tr>
+            </table>
+        </div>
+        <div id="main_outcome" class="main">
+            <p>KẾT QUẢ</p>
+            <table>
+                <tr>
+                    <td>Tổng số câu trắc nghiệm: </td>
+                    <td><span id="no_q"></span></td>
+                </tr>
+                <tr>
+                    <td>Số câu trả lời đúng: </td>
+                    <td><span id="ans_correct"></span></td>
+                </tr>
+                <tr>
+                    <td>Điểm kiểm tra: </td>
+                    <td><span id="span_point"></span></td>
+                </tr>
+                <tr>
+                    <td>Kết luận: </td>
+                    <td><span id="result"></span></td>
+                </tr>
+            </table>
+    
+        </div>
+        <div id="main_signature" class="main" >
+            <div>
+                &nbsp;
+            </div>
+            <div >
+                <p><i>Thành phố Hồ Chí Minh, ngày <span id='day'></span> tháng <span id='month'></span> năm <span id='year'></span></i></p>
+                <p>CHỦ TỊCH HỘI ĐỒNG</p>
+                <p>GIÁM ĐỐC</p>
+                <p style="line-height: 120px;" id="blank_signature">&nbsp;</p>
+                <p>___________________</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

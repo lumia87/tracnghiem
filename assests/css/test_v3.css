@@ -1,0 +1,462 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: Helvetica, Tahoma, sans-serif;
+    font-size: 62.5%;
+    line-height: 1rem;
+    background-color: whitesmoke;
+    color: #666;
+    --mycolor:#f9f9f9;
+    --mycolor2:yellowgreen;
+    --mycolor2_1:orange;
+    --bgcolor:rgb(1, 127, 255);    
+    --btn_color:white;
+    --btn_bgcolor:rgb(0, 175, 239);
+    --btn_bgcolor2:rgb(253, 216, 53);
+    
+}
+
+li{
+    list-style: none; 
+}
+
+a{
+    text-decoration: none;
+}
+
+.li_1{
+    background-color:var(--mycolor);
+}
+
+
+input{
+    margin-right: 10px;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+#wrapper{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    
+}
+
+#header{
+    color: honeydew;
+    background-color: var(--btn_bgcolor);
+    width: 100%;
+    height: 15%;
+    min-height: 125px;
+    padding-top:5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#top_header{
+    display:flex;
+    min-height: 60px;
+}
+
+#top_header #div_config{
+    background-color: #999;
+    text-align: center;
+    display: none;
+    width: 300px;
+}
+
+#top_header>p{
+    font-size: 3rem;
+    padding: 20px 5px 10px 25px;
+}
+
+#top_header img{
+    margin-left: 20px;    
+    margin-bottom: 15px;
+
+    width:50px;
+    height: 50px;
+}
+
+#bottom_header{
+    background-color:var(--btn_color);
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 1px 8px 20px #999;
+}
+
+#right_bottom_header{    
+    display: flex;
+    align-items: center;  
+    justify-content: flex-end;    
+}
+
+
+#bottom_header span{
+    font-size: 35px;
+    color: #666;
+}
+
+/* Định dạng main */
+#main { 
+    width: 100%;   
+    height: 85%;
+    display: flex;
+    /* border: 2px solid red;  */
+}
+
+#config_page{
+    display: none;
+    flex-direction: column;
+    justify-content: start;
+    width: 23%; /*300px */
+    max-width: 300px;
+    background-color: lavender;
+
+}
+
+#config_page p{
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: 1.5rem;
+    
+}
+
+
+#div_admin{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding-top: 10px;
+    height: 50px;
+    position: relative;
+}
+
+#div_other{
+    text-align: center;
+}
+
+#div_admin:hover .admin__content{
+    display: block;
+}
+
+.admin__content{
+    padding-top: 15px;
+    min-height: 90px;
+    width: 100%;
+    position:absolute;
+    color: #666;
+    top:50px;    
+    font-size: 1.2rem;
+    display: none;
+    background-color: aliceblue;
+    text-align: center;
+}
+
+
+#reset, #help{
+    font-size: 1.5rem;
+    padding-top: 20px;
+    height: 50px;    
+}
+
+
+#reset:hover, #div_admin:hover, #help:hover{
+    cursor: pointer;
+    background-color:crimson;
+    color:lightgray;
+    border-right: 3px solid var(--btn_bgcolor);
+}
+
+#div_config {
+    padding-top: 10px;
+    line-height: 2.5rem;
+    border-bottom:lightgray 2px solid;    
+}
+
+#div_config:hover{
+    cursor: pointer;
+    background-color:bisque;
+}
+
+#div_config p:nth-child(4){
+    text-align: center;
+    line-height: 2.5rem;
+}
+
+
+#div_config span{
+    display: inline-block;
+    padding: 5px;
+    width: 120px;
+    font-size: 1.3rem;
+    word-wrap: break-word;
+}
+
+#div_config input{
+    padding: 5px;
+    width: 50px;
+}
+
+#main_page{
+    width: 100%;
+    height: 100%;
+}
+
+/* 1. Định dạng info-page */
+
+#info_page {    
+    height: 10%;
+    width: 70%;
+    margin-left: 150px;
+    display: flex;    
+}
+
+#info_page #grade,#info_page #div_org {
+    display: none;
+}
+
+#info_page label{
+    font-size: 30px;
+    display: block;
+    margin: 30px 0;
+    flex-grow: 1;
+}
+
+#info_page span{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 30px 0px;
+}
+
+input[type='date']{
+    min-width:50px;
+}
+
+
+input[id='org']{
+    width: 100%;
+    max-width: 720px;
+}
+
+#info_page input, select{
+    height: 30px;
+    padding-left: 5px;
+    margin: 5px 15px 5px 5px;    
+    font-size: 18px;
+}
+
+/* Định dạng Exam page */
+
+#exam_page {
+    height: 85%;
+
+}
+/* Phần đầu */
+#top_exam_page{
+    padding-top: 50px;
+    text-align: center; 
+    font-size: 1.6rem;   
+    line-height: 3.5rem;
+}
+
+#main_exam_page{
+    height: 100%;
+    display: flex;
+    padding:50px 50px 10px 50px;
+}
+
+/* Kết thúc định dạng exam page */
+
+
+.left__main{
+   margin-left: 30px;
+   height: 100%;
+   width: 20%;
+   font-size: 2rem;
+   line-height: 3.5rem;
+   background-color: white;
+
+}
+
+.left__main__top{
+    height: 8%;
+    padding: 27px 5px 15px 5px;
+    margin-bottom:10px;
+    background-color:whitesmoke;
+    border-bottom: 2px solid grey;
+    font-size: 2rem;
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+
+.left__main__body{
+    height: 90%;
+    overflow-y:auto;
+}
+
+
+.stat{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0px 10px;
+}
+
+.stat_busy{
+    background-color: var(--mycolor2_1);
+}
+
+.stat_busy_2{
+    background-color:rgb(123, 172, 221);
+    color: whitesmoke;
+}
+.stat_online{
+    background-color:var(--mycolor2);
+
+}
+
+
+.right__main{    
+    margin-right: 30px;
+    padding-left: 20px;
+    height: 100%;
+    width: 80%;
+    font-size: 2rem;
+    line-height: 3.5rem;
+    
+    background-color:whitesmoke;
+    
+ }
+
+.right__main__top{
+    height: 8%;
+    font-size: 2rem;
+    border-bottom: 2px solid grey;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.right__main__body{  
+    color:darkblue;
+    height: 90%;
+}
+
+.right__main__body ul li{
+    display: flex;
+    align-items: flex-start;
+}
+
+
+.right__main__body ul li label{
+     margin-left: 15px;
+}
+
+
+.right__main input[type='checkbox']{
+    margin:10px;
+    outline: none;
+    -ms-transform: scale(2); /* IE */
+    -moz-transform: scale(2); /* FF */
+    -webkit-transform: scale(2); /* Safari and Chrome */
+
+}
+.right__main input[type='checkbox']:focus+label{
+   background-color: gray;
+   color: white;
+}
+
+#navigate{
+    margin-right: 20px;
+}
+
+
+#footer{
+    margin-top: 5px;
+    height: 2%;
+    width: 100%;
+    background-color:var(--btn_bgcolor)
+ }
+
+ button{
+     
+     min-width: 80px;
+     height: 30px;
+     font-size: 1.2rem;
+     margin: 10px 3px;
+     border-width: 0px;
+     color: var(--btn_color);
+     background-color: var(--btn_bgcolor);
+ }
+
+ .button-onexam{
+    background-color:goldenrod;
+ }
+
+ .button-afterexam{
+    background-color:coral;
+ }
+ 
+
+ button:hover{
+    opacity: 0.8;
+}
+
+#btn_control, #btn_print_res, #btn_print_exam{
+    font-size: 16px;
+    font-weight: bold;
+    min-width: 120px;
+    height: 35px;
+    margin: 10px 20px;
+    border-radius: 6px;
+}
+#btn_showconfig{
+    margin: 10px 20px;
+}
+
+svg{
+    fill: var(--btn_color);
+    padding-top: 2px;
+    width: 18px;
+    height: 18px;
+ }
+
+ #font_decrease{
+    width: 20px;
+    height: 20px;
+ }
+ #font_increase{
+    width: 28px;
+    height: 28px;
+ }
+
+ #font_size svg{
+    fill: gray;
+ }
+
+ #font_size span:hover svg{
+    fill: var(--btn_bgcolor);
+ }
+ 
+ @media print {
+    html{
+        width: 21cm;
+        height: 29.7cm;
+        margin: 30mm 45mm 30mm 45mm; 
+        /* change the margins as you want them to be. */
+   } 
+}

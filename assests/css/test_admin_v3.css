@@ -1,0 +1,166 @@
+* { padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+    }
+
+hmtl {
+    
+    width: 100%;
+    font-size: 62.5%;    
+    line-height: 30px;
+}
+
+#header{
+    background-color: cornflowerblue;
+    height: 150px;
+}
+
+#header p:first-child{
+    font-size: 1.5rem;
+    padding: 10px;
+    color: cornsilk;
+
+}
+
+#header select{
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 3px 10px;
+    background-color: cornflowerblue;
+    color: cornsilk;
+    border: none;
+    
+}
+
+
+#header p:nth-child(3){
+    color: whitesmoke;
+    padding: 20px 10px;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+
+#nav_top{
+    display: flex;
+    justify-content: space-between;
+    background-color: whitesmoke;
+    border-bottom: solid 2px gray;
+}
+
+#nav_top input{
+    height: 40px;
+    width: 150px;
+    margin-left: 20px;
+    font-size: 1.3rem;
+    background-color: white;
+
+    text-align: right;
+    padding: 5px;
+    border: none;
+}
+#nav_top input:hover{
+    
+    background-color:cyan;
+}
+
+
+#nav_bottom{
+    display: flex;
+    justify-content:center;
+    margin: 30px;
+}
+
+#view {
+    background-color: whitesmoke;
+    border:1px solid green;
+}
+
+#view div{
+    display: flex; /*Để đảm bảo lable có display:block */
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+#view label{
+    height: 30px;
+    width: 180px;
+}
+
+#view input{
+    height: 30px;
+    width: 60vw;
+    min-width: 500px;
+    font-size: 1.3rem;
+    border-width: 0px;
+}
+
+#view textarea{
+    width: 60vw;
+    min-width: 500px;
+    height: 150px;
+    font-size: 1.3rem;
+    padding: 5px;
+    border-width: 0px;
+}
+
+#in_question{
+    height: 80px;
+}
+#in_answer{
+    font-weight: bold;
+}
+
+
+#div_options{
+    width: 100%;
+
+}
+
+#in_options{
+    width: 100%;
+    display: flex;   
+    flex-direction: column;
+
+}
+#in_options_nav{
+    display: flex;   
+    flex-direction: column;
+    
+}
+
+#in_options_nav button{
+    width: 60px;
+    height: 40px;
+    border-radius: 2px;
+    
+}
+svg{
+    width: 30px;
+    height: 30px;
+
+    fill:#f9f9f9;
+}
+
+button{
+    width: 100px;
+    height: 40px;
+    margin:10px;
+    background-color: cornflowerblue;
+    color: #f9f9f9;
+    border-radius: 10px;
+    border-width: 0px;
+}
+button:hover{
+    opacity: 0.8;
+    background-color: tomato;
+    fill:white;
+}
+
+
+input,textarea:valid{
+    background-color: whitesmoke;
+}
+
+

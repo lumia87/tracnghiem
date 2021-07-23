@@ -1,0 +1,168 @@
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-height: 736px) {
+    /* Styles */
+    #header{
+        height: unset;
+        min-height: unset;
+    }
+    button{
+     
+        min-width: 50px;
+        height: 23px;
+        font-size: 1.1rem;
+        margin: 5px;
+        padding: 3px;
+        border-width: 0px;
+        color: var(--btn_color);
+        background-color: var(--btn_bgcolor);
+    }
+    #btn_control, #btn_print_res, #btn_print_exam{
+        font-size: 1.3rem;
+        font-weight: bold;
+        min-width: 80px;
+        height: 25px;
+        margin: 5px 30px;
+        padding: 5px;
+        border-radius: 6px;
+    }
+    .left__main__top{
+        padding: 20px 5px 10px 5px;
+    }
+  
+    #info_page{               
+        margin-left: 30px;
+        width: 85%;
+        padding-top:8px;
+    }
+
+    #info_page input, #info_page select, #info_page span{
+        font-size: 1.3rem;
+        height:2 rem;
+        margin: 5px 0px;
+        /* min-width: 50px; */
+    }
+
+    #info_page  label{
+        font-size: 1.5rem;
+        margin: 10px 0px;
+    }
+
+    #config_page p{
+      font-size: 1.2rem;
+    }
+
+    #div_config span{
+        display: unset;
+    }
+
+    #div_config p:first-child {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+    .admin__content input{
+        width:80%;
+    }
+    #reset, #help{
+        padding: 5px 0px;
+        border-bottom: 1px solid gray;
+        height: unset;
+    }
+
+}
+/* Smartphones (portrait) ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-height: 736px) and (orientation : portrait) {
+    /* Styles */
+ 
+    #top_header{
+        display: none;
+    }
+    #main_exam_page{
+        padding: 5px;
+        flex-direction: column;
+    }
+
+    #config_page{
+        line-height: 1.8rem;
+    }
+    .left__main{
+        height: 3rem;
+        width: 100%;
+        margin: 5px;    
+        background-color:whitesmoke;    
+    }
+    .left__main__top{
+        border: none;
+        display: inline;
+        
+    }
+    .left__main__body{
+        display: none;
+    }
+    .right__main{
+        width: 100%;
+        margin: 5px;
+    }
+
+    #lbl_info+div div:first-child span{
+        /* background-color: aqua; */
+        display: inline-block;
+        line-height: 3rem;
+    }
+
+    #footer{
+        display: none;
+    }
+
+
+}
+
+
+@media only screen and (min-device-width : 375px) and (max-device-height : 736px) and (orientation:landscape) { 
+
+
+    #top_header img{
+        width: 60px;       
+    }
+
+    #top_header>p{
+        font-size: 2rem;
+        padding:25px 5px 5px 15px;
+    }
+    #bottom_header span{
+        font-size: 1.8rem;
+    }
+
+
+    #main_page {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        
+    }
+    .left__main{
+        margin-left: 5px;
+    }
+
+    .right__main{
+        margin-right: 5px;
+    }
+
+    #main_exam_page{
+        padding: 20px 5px 5px 5px;
+    }
+
+    #exam_page{
+        height: 95%;
+    }
+
+    #right_main_top, #left_main_top, #left_main_body, #right_main_body{
+        font-size: 1.6rem;
+        
+    }
+
+
+
+}
+
